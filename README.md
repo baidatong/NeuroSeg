@@ -28,7 +28,7 @@ The “Plot DF/F” function is to calculate the relative calcium signals (ΔF/F
 ####7. Save and load ROI data: 
 The “Save ROI & Image” function is to save the information of the ROIs and the image into a mat file, and the “Load ROI & Image” is to load the mat file and show the ROIs in the image.
 ####8. Select a specific ROI: 
-Click the index number of ROI in the “ROI no.” listbox, and then the contour of the ROI will flicker in green three times. So the specific ROI can be deleted.
+Click the index number of ROI in the “ROI no.” listbox, and then the contour of the ROI will flicker in green three times. So the specific ROI can be located.
 
 
 *The software was tested on MATLAB R2014a version.
