@@ -57,7 +57,7 @@ handles.output = hObject;
 guidata(hObject, handles);
 set(handles.RoI_index,'Max',2);
 axes(handles.axes1);
-imlog=imread('log.jpg');
+imlog=imread('logo.jpg');
 imshow(imlog);
 text(0.5*size(imlog,1)-200,0.5*size(imlog,2)-150,'Welcome to NeuroSeg','FontSize',30);
 
@@ -633,7 +633,7 @@ end
 
 for k=1:length(ParametersOutput.xypos)
     hline(1,k)=plot(ParametersOutput.xypos{k}(1,:),ParametersOutput.xypos{k}(2,:),'r','LineWidth',2);
-    htext(1,k)=text(ParametersOutput.xy_all(1,k),ParametersOutput.xy_all(2,k),num2str(k-1),'color','g','FontSize',12);
+ %   htext(1,k)=text(ParametersOutput.xy_all(1,k),ParametersOutput.xy_all(2,k),num2str(k-1),'color','g','FontSize',12);
 end
 
 handles.htext = htext;
@@ -681,7 +681,7 @@ xyloObj = VideoReader([pathname filename]);
    vidHeight = xyloObj.Height;
    vidWidth = xyloObj.Width;
    mov_data = zeros(vidHeight,vidWidth,nFrames);%record movie data
-    mov_data = zeros(460,500,nFrames);%record movie data
+  %  mov_data = zeros(460,500,nFrames);%record movie data
   
   hwaitbar = waitbar(0,'Loading video,please wait...');
   
@@ -690,7 +690,7 @@ xyloObj = VideoReader([pathname filename]);
   for movi=1:nFrames
         waitbar(movi / steps)
         mov_data_temp=read(xyloObj,movi);
-        mov_data(:,:,movi)=mov_data_temp(width+1:end-20,:);
+        mov_data(:,:,movi)=mov_data_temp;%(width+1:end-20,:);
    end
 close(hwaitbar); 
 I=mean(double(mov_data),3);
