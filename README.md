@@ -1,6 +1,5 @@
 # NeuroSeg
 
-###Overview
 NeuroSeg is an open-source MATLAB program used for automatic detecting and segmenting cells in two-photon calcium imaging data.
 
 ###Installation
