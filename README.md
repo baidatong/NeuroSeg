@@ -1,5 +1,4 @@
 # NeuroSeg
-the codes of NeuroSeg
 
 ###Overview
 NeuroSeg is an open-source MATLAB program used for automatic detecting and segmenting cells in two-photon calcium imaging data.
@@ -7,9 +6,10 @@ NeuroSeg is an open-source MATLAB program used for automatic detecting and segme
 ###Installation
 1. Extract the ZIP file (or clone the GitHub repository) somewhere you can easily reach it.
 2. Add the NeuroSeg/ folder to your path in MATLAB by e.g.,
-•    using the "Set Path" dialog in MATLAB;
-•	running the “addpath” function from your command window or startup script;
-•	running the script GUI: NeuroSeg.m.
+
+ * using the "Set Path" dialog in MATLAB;
+ * running the “addpath” function from your command window or startup script;
+ * running the script GUI: NeuroSeg.m.
 
 
 ###Usage
@@ -35,6 +35,7 @@ Click the index number of ROI in the “ROI no.” listbox, and then the contour
 
 ###Contact
 Jiangheng Guan (735341369@qq.com)
+
 Xiang Liao (xiang.liao@aliyun.com)
 
 
