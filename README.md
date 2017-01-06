@@ -7,8 +7,9 @@ NeuroSeg is an open-source MATLAB program used for automatic detecting and segme
 ####2. Add the NeuroSeg/ folder to your path in MATLAB by e.g.,
 
  * using the "Set Path" dialog in MATLAB;
- * running the “addpath” function from your command window or startup script;
- * running the script GUI: NeuroSeg.m.
+ * running the “addpath” function from your command window or startup script.
+
+####3.running the script GUI: NeuroSeg.m.
 
 
 ###Usage
