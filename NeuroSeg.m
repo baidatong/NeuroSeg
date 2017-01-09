@@ -768,9 +768,11 @@ title('Calcium traces')
 hold on;
 ymax=0;
 ymin=0;
+dF_data=zeros(size(F));
 for ii=1:Cellnum
     F_temp=(F(:,ii)-F_ave(ii))/F_ave(ii);
     plot((1:nFrames)/Frequency,F_temp+(ii)*Interval);
+    dF_data(:,ii)=F_temp;
     ymin = min(min(F_temp+(ii)*Interval),ymin);
     ymax = max(max(F_temp+(ii)*Interval),ymax);
 end
@@ -787,7 +789,8 @@ end
  set(gca,'FontName','Times New Roman','FontSize',14);
  
  
- handles.F_data = F; %save F,not deltaF/F;
+ %handles.F_data = F; %save F,not deltaF/F;
+ handles.dF_data=dF_data;%save deltaF/F;
  guidata(hObject,handles);
 
 
@@ -799,7 +802,7 @@ function save_df_f_Callback(hObject, eventdata, handles)
 guidata(hObject,handles);
 filename = handles.filename;
 [FileName,PathName] = uiputfile([filename(1:end-4) '_Image_ROIdata.txt'],'Save Image and ROI');
-data_output=handles.F_data;
+data_output=handles.dF_data;
 StrFormat=[];
 for k=1:size(data_output,2)-1
     StrFormat=[StrFormat, '%5.8f '];
