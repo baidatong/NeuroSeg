@@ -822,7 +822,7 @@ StrFormat=[StrFormat, '%5.8f'];
 
 StrFormat=[StrFormat '\n'];
 FileID = fopen([PathName '\' FileName],'w');
-fprintf(FileID,StrFormat,data_output);
+fprintf(FileID,StrFormat,data_output');
 fclose(FileID);
 
 [FileName2,PathName2] = uiputfile([filename(1:end-4) '_f_Image_ROIdata.txt'],'Save Image and ROI');
@@ -834,7 +834,7 @@ end
 StrFormat=[StrFormat, '%5.8f'];
 StrFormat=[StrFormat '\n'];
 FileID2 = fopen([PathName2 '\' FileName2],'w');
-fprintf(FileID2,StrFormat,data_output2);
+fprintf(FileID2,StrFormat,data_output2');
 fclose(FileID2);
 
 
