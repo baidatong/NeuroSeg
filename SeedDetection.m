@@ -11,10 +11,14 @@ function [new_coordinate_x_leave,new_coordinate_y_leave,absigma_leave]=SeedDetec
 %         absigma_leave         :the sigma_x,sigma_y,and the theta of the
 %                                ellipse
 
-medianFilter=5;
-medianFilter = vision.MedianFilter([medianFilter medianFilter]);
-I_norm = step(medianFilter,I_norm_ori);
-
+medianFilter_size=5;
+try
+    medianFilter = vision.MedianFilter([medianFilter_size medianFilter_size]);
+    I_norm = step(medianFilter,I_norm_ori);
+catch
+    I_norm = medfilt2(I_norm_ori,[medianFilter_size medianFilter_size]);% if there isn't vision package,
+                                                                   % you can try medfilt2;
+end
 
 norm_method=0;%choose the normalization method to use.
 p2=2*max_sigma*3+1;
