@@ -14,10 +14,14 @@ function ParametersOutput=fastSegmentation(I_norm_ori,new_coordinate_x_leave,new
 %       ParametersOutput.Pixels   :the position of the cells
 %       ParametersOutput.xy_all   :the position of the boundaries of the 
 %                                  cells
-medianFilter=5;
-medianFilter = vision.MedianFilter([medianFilter medianFilter]);
-I_norm = step(medianFilter,I_norm_ori);
-
+medianFilter_size=5;
+try
+    medianFilter = vision.MedianFilter([medianFilter_size medianFilter_size]);
+    I_norm = step(medianFilter2,I_norm_ori);
+catch
+    I_norm = medfilt2(I_norm_ori,[medianFilter_size medianFilter_size]);% if there isn't vision package,
+                                                                        % you can try medfilt2;
+end
 ratio_imcropSize=3;
 Mask_norm=zeros(size(I_norm));
 Mask_norm_temp=zeros(size(I_norm));
